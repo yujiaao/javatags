@@ -22,7 +22,7 @@ public class HtmlHelperTest {
  
 	@Test
 	public void htmlTagRenderDocTypeAlso() throws Exception {
-		assertThat(html5().render(), is("<!DOCTYPE html><html></html>"));
+		assertThat(html5().render().toString(), is("<!DOCTYPE html><html></html>"));
 	}
 	
 	@Test
@@ -38,13 +38,13 @@ public class HtmlHelperTest {
 				text("text")
 			);
 		
-		assertThat(frag.render(), is("<div><div></div>text</div>"));
-		assertThat(frag2.render(), is("<div><div></div><div></div>text</div>"));
+		assertThat(frag.render().toString(), is("<div><div></div>text</div>"));
+		assertThat(frag2.render().toString(), is("<div><div></div><div></div>text</div>"));
 	}
 	
 	@Test
 	public void renderDivWithAttributeAndTest() throws Exception {
-		assertThat(div(attr("id -> 123"), "some text").render(), is("<div id='123'>some text</div>"));
+		assertThat(div(attr("id -> 123"), "some text").render().toString(), is("<div id='123'>some text</div>"));
 	}
 	
 	@Test
@@ -69,7 +69,7 @@ public class HtmlHelperTest {
 						+ 	"</div>"
 						+ "</html>";
 		
-		assertThat(frag.render(), is(expected));
+		assertThat(frag.render().toString(), is(expected));
 	}
 	
 	@Test
@@ -91,7 +91,7 @@ public class HtmlHelperTest {
 								"</head>" +
 						    "</html>";
 		
-		assertThat(frag.render(), is(expected));
+		assertThat(frag.render().toString(), is(expected));
 	}
 	
 	@Test
@@ -100,7 +100,7 @@ public class HtmlHelperTest {
 						 a(attr("href -> xxx", "onclick -> alert(\"yay!\")"), "xxx")
 					   );
 		
-		assertThat(frag.render(), is("<div><a href='xxx' onclick='alert(\"yay!\")'>xxx</a></div>" ));
+		assertThat(frag.render().toString(), is("<div><a href='xxx' onclick='alert(\"yay!\")'>xxx</a></div>" ));
 	}
 	
 	@Test
@@ -111,6 +111,6 @@ public class HtmlHelperTest {
 							"}"
 					   );
 		
-		assertThat(frag.render(), is("<script type='text/javascript'>function xxx{alert('yay!');}</script>" ));
+		assertThat(frag.render().toString(), is("<script type='text/javascript'>function xxx{alert('yay!');}</script>" ));
 	}
 }

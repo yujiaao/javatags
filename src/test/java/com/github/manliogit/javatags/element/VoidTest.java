@@ -11,12 +11,12 @@ public class VoidTest {
 
 	@Test
 	public void voidElementHasSelfClosingChar() {
-		assertThat(new Void("br").render(), is("<br/>"));
+		assertThat(new Void("br").render().toString(), is("<br/>"));
 	}
 	
 	@Test
 	public void voidElementWithAttributeHasSelfClosingChar() {
-		assertThat(new Void("hr", new Attribute("aaa -> xxx")).render(), is("<hr aaa='xxx'/>"));
+		assertThat(new Void("hr", new Attribute("aaa -> xxx")).render().toString(), is("<hr aaa='xxx'/>"));
 	}
 	
 	@Test

@@ -24,6 +24,6 @@ public class GroupTest {
 				add(new Void("div")).
 				add(new Void("span"));
 		
-		assertThat(group.render(), is("<br/><div/><span/>"));
+		assertThat(group.render().toString(), is("<br/><div/><span/>"));
 	}
 }

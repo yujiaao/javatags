@@ -32,12 +32,12 @@ public class NonVoid implements Element {
 	}
 
 	@Override
-	public String render() {
-		String result= "<" + tagContent() + ">";
+	public StringBuilder render() {
+		StringBuilder result= new StringBuilder("<" + tagContent() + ">");
 		for (Element child : _children) {
-			result += child.render();
+			result.append(child.render());
 		}
-		return result += "</" + _name + ">" ;
+		return result.append( "</" + _name + ">" );
 	}
 	
 	@Override
@@ -48,7 +48,7 @@ public class NonVoid implements Element {
 	
 	@Override
 	public String toString() {
-		return render();
+		return render().toString();
 	}
 	
 	@Override

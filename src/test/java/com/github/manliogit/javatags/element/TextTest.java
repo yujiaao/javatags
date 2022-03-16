@@ -21,6 +21,6 @@ public class TextTest {
 				add(new Void("div")).
 				add(new Text("cccc"));
 		
-		assertThat(text.render(), is("aaa"));
+		assertThat(text.render().toString(), is("aaa"));
 	}
 }

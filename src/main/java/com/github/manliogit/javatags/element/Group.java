@@ -18,12 +18,15 @@ public class Group implements Element {
 	}
 	
 	@Override
-	public String render() {
-		String result = "";
+	public StringBuilder render() {
+
+		StringBuilder	sb = new StringBuilder();
+
 		for (Element tag : _tags) {
-			result += tag.render();
+			sb.append(tag.render());
 		}
-		return result;
+		return sb;
+
 	}
 
 	@Override
@@ -34,7 +37,7 @@ public class Group implements Element {
 
 	@Override
 	public String toString() {
-		return render();
+		return render().toString();
 	}
 	
 	@Override

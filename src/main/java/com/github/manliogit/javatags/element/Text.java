@@ -9,8 +9,8 @@ public class Text implements Element {
 	}
 	
 	@Override
-	public String render() {
-		return _text;
+	public StringBuilder render() {
+		return new StringBuilder(_text);
 	}
 
 	@Override
@@ -20,7 +20,7 @@ public class Text implements Element {
 
 	@Override
 	public String toString() {
-		return render();
+		return render().toString();
 	}
 	
 	@Override

@@ -2,6 +2,6 @@ package com.github.manliogit.javatags.element;
 
 public interface Element {
 
-	String render();
+	StringBuilder render();
 	Element add(Element element);
 }
